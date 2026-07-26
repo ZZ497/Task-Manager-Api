@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Task-Manager-Api
-Proyect which simulates a Task List
-=======
 # Task Manager API
 
 REST API desarrollada con Spring Boot para la gestión de usuarios y tareas.
@@ -22,4 +18,3 @@ REST API desarrollada con Spring Boot para la gestión de usuarios y tareas.
 ## Objetivo
 
 Desarrollar una API REST siguiendo buenas prácticas de arquitectura backend con el fin de ampliar conocimientos en Spring Boot y disponer de un proyecto sólido para portfolio y CV.
->>>>>>> af03634 (Initial project setup with Spring Boot, Java 21 and MariaDB)
