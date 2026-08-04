@@ -1,6 +1,7 @@
 package com.diego.task_manager_api.controller;
 import com.diego.task_manager_api.service.HelloService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 // Realiza las peticiones HTTP
@@ -19,7 +20,8 @@ public class HelloController {
     HelloController myController = new HelloController(myService);
 
     // Cuando se hace una petición GET a /, se ejecutará este método
-    @GetMapping("/")
+    @GetMapping("/tasks")
+    @RequestMapping("/tasks")
     // Método que se ejecuta al dirigirse a /
     public String hello(){
         return myService.sayHello();
