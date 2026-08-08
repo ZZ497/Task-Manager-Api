@@ -5,12 +5,30 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+
+import java.util.List;
+
+/**
+ * Servicio que contiene la lógica de negocio
+ * relacionada con las tareas.
+ */
 @Service
 public class TaskService {
 
+    // Repositorio que accede a la base de datos.
     private final TaskRepository taskRepository;
 
+    /**
+     * Spring inyecta automáticamente el TaskRepository.
+     */
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
+    }
+
+    /**
+     * Obtiene todas las tareas desde la base de datos.
+     */
+    public List <Task> getAllTasks(){
+        return taskRepository.findAll();
     }
 }
