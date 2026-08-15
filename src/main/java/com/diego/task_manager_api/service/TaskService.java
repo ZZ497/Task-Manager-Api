@@ -4,6 +4,7 @@ import com.diego.task_manager_api.repository.TaskRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 
 import java.util.List;
@@ -30,5 +31,18 @@ public class TaskService {
      */
     public List <Task> getAllTasks(){
         return taskRepository.findAll();
+    }
+    /**
+     * Crea un Task
+     */
+    public Task createTask (Task task){
+        return taskRepository.save(task);
+    }
+
+    /**
+     * Encontrar tarea por Id
+     */
+    public Optional<Task> getTaskById(Long id){
+        return taskRepository.findById(id);
     }
 }

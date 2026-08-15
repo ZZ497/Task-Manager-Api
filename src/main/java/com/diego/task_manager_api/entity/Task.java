@@ -25,7 +25,7 @@ public class Task {
     /**
      * Título de la tarea
      */
-    private String titile;
+    private String title;
 
     /**
      * Descripción de la tarea
@@ -43,4 +43,42 @@ public class Task {
      */
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    /**
+     * Getters
+     */
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean isCompleted() {
+        return this.completed;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * Setters
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
 }
