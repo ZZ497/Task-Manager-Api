@@ -1,12 +1,9 @@
 package com.diego.task_manager_api.service;
 import com.diego.task_manager_api.entity.Task;
+import com.diego.task_manager_api.exception.TaskNotFoundException;
 import com.diego.task_manager_api.repository.TaskRepository;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
-
-
 import java.util.List;
 
 /**
@@ -47,6 +44,18 @@ public class TaskService {
     }
 
     /**
-     * Borrar por 
+     * Borrar tarea por id
      */
+
+    public void deleteTask(Long id){
+        Optional <Task> task = taskRepository.findById(id);
+        if (task.isPresent()){
+            taskRepository.deleteById(id);
+        } else {
+            throw new TaskNotFoundException(
+                    "No existe ninguna tarea con el id " + id
+            );
+        }
+    }
+
 }
