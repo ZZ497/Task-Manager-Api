@@ -58,4 +58,22 @@ public class TaskService {
         }
     }
 
+    /**
+     *  Actualizar tarea
+     */
+    public Task updateTask(Long id, Task taskActualizado) {
+        Optional<Task> task = taskRepository.findById(id);
+
+        if (task.isPresent()) {
+            Task existingTask = task.get();
+            existingTask.setTitle(taskActualizado.getTitle());
+            existingTask.setDescription(taskActualizado.getDescription());
+            existingTask.setCompleted(taskActualizado.isCompleted());
+        } else {
+            throw new TaskNotFoundException(
+                    "No existe ninguna tarea con el id " + id
+            );
+        }
+
+    }
 }
