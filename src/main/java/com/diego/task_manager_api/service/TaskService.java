@@ -69,11 +69,11 @@ public class TaskService {
             existingTask.setTitle(taskActualizado.getTitle());
             existingTask.setDescription(taskActualizado.getDescription());
             existingTask.setCompleted(taskActualizado.isCompleted());
+            return taskRepository.save(existingTask);
         } else {
             throw new TaskNotFoundException(
                     "No existe ninguna tarea con el id " + id
             );
         }
-
     }
 }
