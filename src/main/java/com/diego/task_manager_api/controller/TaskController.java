@@ -6,7 +6,6 @@ import com.diego.task_manager_api.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -58,8 +57,7 @@ public class TaskController {
 
             // Si no existe, devolvemos un error HTTP 404.
         } else {
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND,
+            throw new TaskNotFoundException(
                     "No existe ninguna tarea con el id " + id
             );
         }
